@@ -1,0 +1,15 @@
+@import '~antd/dist/antd.css';
+
+.App {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: lightgray;
+}
+
+.ant-form-item-with-help {
+    margin-bottom: 24px;
+}
+
+.title {
+    text-align: center;
+}
