@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description
+Form for creating a new employee. Depending on the selected coutnry, different form fields will be displayed. \
+Form fetches from list of avaialbe countries from mocked server.\
+Form accepts employeeId and prepopulates form in case there is info about it from the server. It no longer behaves as create form, but as edit form.\
+Form fetches additional form fields on selected country update and displays it in the UI.\ 
+Basic fields options are configured on the server side.
+
+## Running the app
+### `npm start`
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
