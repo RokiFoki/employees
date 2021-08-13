@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const countries: ICountry[] = [{
     id: 1,
     name: 'Spain'
@@ -12,7 +14,7 @@ const countries: ICountry[] = [{
 const countryFields: {[key: number]: IField[]} = {
     1: [{
         label: 'Holiday allowance',
-        name: 'holidayallowance',
+        name: 'holidayAllowance',
         type: 'number',
         required: true,
         constraints: [{
@@ -21,7 +23,7 @@ const countryFields: {[key: number]: IField[]} = {
         }]
     }, { 
         label: 'Marital status', 
-        name: 'martialstatus',
+        name: 'martialStatus',
         type: 'select', 
         required: true,
         options: ['Married', 'Not Married']
@@ -37,7 +39,7 @@ const countryFields: {[key: number]: IField[]} = {
     }], 
     2: [{
         label: 'Holiday allowance',
-        name: 'holidayallowance',
+        name: 'holidayAllowance',
         type: 'number',
         required: true,
         constraints: [{
@@ -46,13 +48,13 @@ const countryFields: {[key: number]: IField[]} = {
         }]
     }, { 
         label: 'Marital status', 
-        name: 'martialstatus',
+        name: 'martialStatus',
         type: 'select', 
         required: true,
         options: ['Married', 'Not Married']
     }, { 
         label: 'Number of children', 
-        name: 'numberofchildren',
+        name: 'numberOfChildren',
         type: 'number',
         required: true,
         constraints: [{
@@ -62,7 +64,7 @@ const countryFields: {[key: number]: IField[]} = {
     }], 
     3:  [{
         label: 'Holiday allowance',
-        name: 'holidayallowance',
+        name: 'holidayAllowance',
         type: 'number',
         required: true,
         constraints: [{
@@ -71,7 +73,7 @@ const countryFields: {[key: number]: IField[]} = {
         }]
     }, { 
         label: 'Working hours', 
-        name: 'workinghours',
+        name: 'workingHours',
         type: 'number', 
         required: true,
         constraints: [{
@@ -93,7 +95,13 @@ export function fetchEmployee(id?: number): Promise<IEmployeeCreateData> {
     
     return Promise.resolve({
         id: 1,
-        country: {...countries[0]}
+        country: {...countries[0]},
+        firstname: 'James',
+        lastname: 'Bond',
+        dateOfBirth: moment("19931111", "YYYYMMDD"),
+        SIN: '12345678',
+        martialStatus: 'Not Married',
+        holidayAllowance: 35
     });
 }
 
@@ -144,7 +152,15 @@ export type IField = IInputField | ITextAreaField | INumberField | ISelectField;
 
 export interface IEmployeeCreateData {
     id?: 1,
-    country?: ICountry
+    country?: ICountry,
+    firstname?: string,
+    lastname?: string,
+    dateOfBirth?: moment.Moment
+    holidayAllowance?: number,
+    martialStatus?: string,
+    SIN?: string,
+    numberOfChildren?: string,
+    workingHours?: string
 }
 
 export interface ICountry {

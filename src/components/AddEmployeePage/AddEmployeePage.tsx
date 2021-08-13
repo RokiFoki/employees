@@ -5,6 +5,7 @@ import './AddEmployeePage.css';
 
 const AddEmployeePage = () => (
   <div className="AddEmployeePage">
+    {/* <AddEmployeeForm  employerId={1}/> */}
     <AddEmployeeForm />
   </div>
 );
