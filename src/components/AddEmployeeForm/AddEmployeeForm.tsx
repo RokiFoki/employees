@@ -68,7 +68,11 @@ const AddEmployeeForm: React.FC<IAddEmployeeFormProps> = ({employerId}: IAddEmpl
             <Form.Item key={f.name}
               label={f.label}
               name={f.name}
-              rules={[{required: f.required, message: `${f.label} is required.`}]}>
+              rules={[{required: f.required, message: `${f.label} is required.`},
+                      { 
+                        pattern: f.constraints?.find(c => c.type === 'regex')?.value as RegExp, 
+                        message: `${f.label} is incorrect.`  
+                      }]}>
                 {f.type === 'input' ? <Input /> :
                   f.type === 'textarea' ? <Input.TextArea /> :
                   f.type === 'number' ?  <InputNumber 

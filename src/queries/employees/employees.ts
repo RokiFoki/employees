@@ -32,7 +32,7 @@ const countryFields: {[key: number]: IField[]} = {
         required: true,
         constraints: [{
             type: 'regex',
-            value: /\d{8}/
+            value: /^\d{8}$/
         }]
     }], 
     2: [{
